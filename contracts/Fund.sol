@@ -90,4 +90,13 @@ contract FundMe {
 
     }
 
+    function listOfFunds () public view returns (string[] memory ){
+        return fundNames;
+    }
+ 
+    function whoFund(string memory _funders) public view returns(address[] memory){
+        fundraised storage fundraiser = fundRaiseds[_funders];
+        return fundraiser.fundersT;
+    }
+
 }
